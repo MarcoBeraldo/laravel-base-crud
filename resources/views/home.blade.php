@@ -7,6 +7,21 @@
     <title>Comics</title>
 </head>
 <body>
-    
+<header>    
+    <a href="{{route('comics.index')}}">Homepage fumetti</a>
+    <a href="{{route('comics.create')}}">Nuovo fumetto</a>
+</header>
+
+    <main>
+        <div>
+
+            @yield('content')
+        </div>
+    </main>
+
+    <footer>
+        footer
+    </footer>
+
 </body>
 </html>

@@ -1,5 +1,7 @@
 @extends('home')
 
+@section('title', 'List')
+
 @section('content')
-Home fumetti
+Lista fumetti
 @endsection

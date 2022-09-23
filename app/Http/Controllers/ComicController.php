@@ -38,7 +38,7 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //salvo nel db
     }
 
     /**
@@ -49,7 +49,7 @@ class ComicController extends Controller
      */
     public function show($id)
     {
-        //
+        //mostro la pagina di dettaGLI FUMETTI
     }
 
     /**
@@ -60,7 +60,7 @@ class ComicController extends Controller
      */
     public function edit($id)
     {
-        //
+        //mostra la apgina con la form di modifica del fumetto, deve richiamare udsate
     }
 
     /**
@@ -72,7 +72,7 @@ class ComicController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //modifica effettivamente il valore del fumetto
     }
 
     /**
@@ -83,6 +83,6 @@ class ComicController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //cancella una riga dalla  tabella
     }
 }

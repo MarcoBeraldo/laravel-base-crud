@@ -3,5 +3,7 @@
 @section('title', 'List')
 
 @section('content')
-Lista fumetti
+    @foreach($comics as $comic)
+{{$comic->title}}
+    @endforeach
 @endsection

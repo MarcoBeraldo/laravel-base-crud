@@ -4,6 +4,6 @@
 
 @section('content')
     @foreach($comics as $comic)
-{{$comic->title}}
+<a href="{{route('comics.show', $comic->id) }}">{{$comic->title}}</a>
     @endforeach
 @endsection

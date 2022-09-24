@@ -39,6 +39,11 @@ class ComicController extends Controller
     public function store(Request $request)
     {
         //salvo nel db
+        $data = $request->all();
+        $comic = new Comic();
+        $comic->fill($data);
+        $comic->save();
+        return redirect()->route('comics.show', $comic);
     }
 
     /**
@@ -47,9 +52,10 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Comic $comic)
     {
         //mostro la pagina di dettaGLI FUMETTI
+        return view('comics.show', compact('comic'));
     }
 
     /**
@@ -58,9 +64,11 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Comic $comic)
     {
         //mostra la apgina con la form di modifica del fumetto, deve richiamare udsate
+        return view('comics.edit', compact('comic'));
+
     }
 
     /**
@@ -70,9 +78,13 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Comic $comic)
     {
         //modifica effettivamente il valore del fumetto
+        $data = $request->all();        
+        $comic->fill($data);
+        $comic->save();
+        return redirect()->route('comics.show', $comic);
     }
 
     /**
@@ -81,8 +93,10 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Comic $comic)
     {
         //cancella una riga dalla  tabella
+        $comic->delete();
+        return redirect()->route('home');
     }
 }
